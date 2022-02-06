@@ -15,13 +15,19 @@ const images = [
 
 const listEl = document.querySelector(".gallery");
 
-const newStr = image=> `<li><img url="${image.url}" alt="${image.alt}"/></li>`;
+const newStr = (image => `<li><img src="${image.url}" alt="${image.alt}" width=300 height=200/></li>`);
 const imagesEl = images.map(newStr).join("");
 
-listEl.insertAdjacentHTML('afterbegin', imagesEl);
+listEl.insertAdjacentHTML('beforeend', imagesEl);
 //console.log("list",listEl);
 
 /* Используй массив объектов images для создания элементов <img> вложенных в <li>. Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
 
 - Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 - Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.*/
+
+/*const imagesEl = images.reduce((acc, newStr)=> {
+  acc += newStr;
+  console.log(acc);
+  return acc;
+ }, "");*/
