@@ -1,14 +1,10 @@
 const listItem = document.querySelectorAll(".item");
 console.log("Number of categories",listItem.length);
 
-for (const item of listItem) {
-    let category = item.querySelector('h2');
-    console.log("\n Category: ",category.textContent);
-
-    let elements = item.querySelector('ul');
-    console.log("Elements: ", elements.children.length);
-  }
-
+  listItem.forEach(function (item) {
+    console.log("\n Category: ", item.firstElementChild.textContent);
+    console.log("Elements: ", item.querySelector('ul').children.length);
+  })
 
   /*Напиши скрипт который:
 

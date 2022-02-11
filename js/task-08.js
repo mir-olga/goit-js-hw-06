@@ -8,8 +8,12 @@ function submitForm (event) {
     const password = formElements.password.value;
 
     if (email === "" || password === "") {
-        return alert("Пожалуйста, заполните все поля формы");
+         alert("Пожалуйста, заполните все поля формы");
+         formEl.reset();
     }
+
+    
+
     const formData = {
         email,
         password
